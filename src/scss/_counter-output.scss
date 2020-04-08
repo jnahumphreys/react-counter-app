@@ -1,0 +1,23 @@
+.counter-output {
+  margin: 0 0 1rem 0;
+
+  &__count {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    color: #313131;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @media (prefers-color-scheme: dark) {
+      color: #b9b9b9;
+    }
+
+    @media screen and (min-width: 48rem) {
+      font-size: 8rem;
+    }
+  }
+}
