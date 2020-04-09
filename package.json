@@ -1,5 +1,5 @@
 {
-  "name": "react-counter-appß",
+  "name": "react-counter-app",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -24,7 +24,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --setupFiles ./src/setupTests.js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pretty:js-check": "prettier --check './src/**/*.{js,jsx}'",
+    "pretty:js-fix": "prettier --write './src/**/*.{js,jsx}'",
+    "pretty:scss-check": "prettier --check './src/**/*.scss'",
+    "pretty:scss-fix": "prettier --write './src/**/*.scss'"
   },
   "browserslist": [
     ">0.2%",
