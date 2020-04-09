@@ -2,9 +2,9 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-export const Button = props => {
+export const Button = (props) => {
   const buttonClasses = classnames("btn", props.classes, {
-    [`btn--${props.appearance}`]: true
+    [`btn--${props.appearance}`]: true,
   });
 
   return (
@@ -44,10 +44,10 @@ Button.propTypes = {
   /*
   Allows the passing of content within the Button (typically the label)
   */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Button.defaultProps = {
   appearance: "default",
-  disabled: false
+  disabled: false,
 };

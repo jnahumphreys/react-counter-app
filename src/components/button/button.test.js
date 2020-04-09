@@ -49,7 +49,7 @@ describe("Button - render", () => {
           onClick={handleOnClick}
           additionalAttrs={{
             name: "test-button-name",
-            type: "button"
+            type: "button",
           }}
         >
           Button label
@@ -75,9 +75,9 @@ describe("Button - render", () => {
       "should set the button appearance to '$appearance' when passed a value of '$appearance' to the 'appearance' prop",
       ({ appearance }) => {
         component.setProps({ appearance: appearance });
-        expect(component.find("button.btn").hasClass(`btn--${appearance}`)).toEqual(
-          true
-        );
+        expect(
+          component.find("button.btn").hasClass(`btn--${appearance}`)
+        ).toEqual(true);
       }
     );
 
@@ -107,12 +107,9 @@ describe("Button - render", () => {
     });
 
     it("should pass child prop content as direct decendants of the button DOM node", () => {
-      expect(
-        component
-          .find("button.btn")
-          .childAt(0)
-          .text()
-      ).toEqual("Button label");
+      expect(component.find("button.btn").childAt(0).text()).toEqual(
+        "Button label"
+      );
     });
   });
 

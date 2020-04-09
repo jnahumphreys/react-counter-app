@@ -5,11 +5,11 @@
   width: 100%;
   max-width: 20rem;
   margin: 0 auto;
-	
-	&__action {
+
+  &__action {
     flex: 1 1 auto;
   }
-	
+
   &__action--decrement,
   &__action--increment {
     font-size: 1.5rem;

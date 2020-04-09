@@ -1,1 +1,1 @@
-export { CounterOutput } from "./counter-output"
+export { CounterOutput } from "./counter-output";
