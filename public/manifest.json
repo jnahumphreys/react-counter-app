@@ -1,0 +1,6 @@
+{
+  "name": "React Counter App",
+  "short_name": "Counter App",
+  "display": "standalone",
+  "apple-mobile-web-app-status-bar-style": "black-translucent"
+}
