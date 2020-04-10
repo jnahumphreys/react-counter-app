@@ -6,10 +6,6 @@
   "main": "src/index.js",
   "dependencies": {
     "classnames": "2.2.6",
-    "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.2",
-    "enzyme-to-json": "3.4.4",
-    "jsdom": "16.2.2",
     "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
     "react": "16.12.0",
@@ -17,6 +13,10 @@
     "react-scripts": "^3.4.1"
   },
   "devDependencies": {
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "enzyme-to-json": "3.4.4",
+    "jsdom": "16.2.2",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.4",
     "typescript": "3.3.3"
