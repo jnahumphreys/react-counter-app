@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 const CounterStateContext = React.createContext();
 const CounterDispatchContext = React.createContext();
@@ -6,9 +6,9 @@ const CounterDispatchContext = React.createContext();
 const useCounterStateContext = () => useContext(CounterStateContext);
 const useCounterDispatchContext = () => useContext(CounterDispatchContext);
 
-export { 
+export {
   CounterStateContext,
   CounterDispatchContext,
-  useCounterStateContext, 
-  useCounterDispatchContext 
+  useCounterStateContext,
+  useCounterDispatchContext,
 };

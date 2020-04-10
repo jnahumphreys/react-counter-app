@@ -1,18 +1,14 @@
 import React from "react";
-import {
-  useCounterStateContext, 
-  useCounterDispatchContext
-} from "../../store";
+import { useCounterStateContext, useCounterDispatchContext } from "../../store";
 import { Button } from "../button";
 
 export const CounterActions = () => {
-
   const count = useCounterStateContext();
-  const {increment, decrement, reset} = useCounterDispatchContext();
+  const { increment, decrement, reset } = useCounterDispatchContext();
 
   return (
     <footer className="counter-actions">
-      <Button 
+      <Button
         classes="counter-actions__action counter-actions__action--decrement"
         disabled={count <= 0}
         onClick={decrement}
@@ -20,7 +16,7 @@ export const CounterActions = () => {
         -
       </Button>
 
-      <Button 
+      <Button
         classes="counter-actions__action counter-actions__action--increment"
         onClick={increment}
       >

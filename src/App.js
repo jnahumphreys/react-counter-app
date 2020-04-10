@@ -10,8 +10,8 @@ export default function App() {
   const [count, actions] = useCounterStore();
 
   return (
-    <CounterStateContext.Provider value={count} >
-      <CounterDispatchContext.Provider value={actions} >
+    <CounterStateContext.Provider value={count}>
+      <CounterDispatchContext.Provider value={actions}>
         <div className="app">
           <CounterContainer>
             <CounterOutput />

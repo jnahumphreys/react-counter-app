@@ -1,8 +1,7 @@
 import React from "react";
-import {useCounterStateContext} from "../../store";
+import { useCounterStateContext } from "../../store";
 
 export const CounterOutput = () => {
-
   const count = useCounterStateContext();
 
   return (
