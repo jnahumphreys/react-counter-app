@@ -25,6 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --setupFiles ./src/setupTests.js",
+    "test:coverage": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "pretty:js-check": "prettier --check './src/**/*.{js,jsx}'",
     "pretty:js-fix": "prettier --write './src/**/*.{js,jsx}'",
@@ -38,6 +39,22 @@
     "not op_mini all"
   ],
   "jest": {
+    "clearMocks": true,
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/public",
+      "!<rootDir>/coverage",
+      "!<rootDir>/build"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
