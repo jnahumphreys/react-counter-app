@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CounterActions - render should match snapshot 1`] = `
+<CounterActions>
+  <footer
+    className="counter-actions"
+  >
+    <Button
+      appearance="default"
+      classes="counter-actions__action counter-actions__action--decrement"
+      disabled={true}
+      onClick={[MockFunction decrement]}
+    >
+      <button
+        className="btn counter-actions__action counter-actions__action--decrement btn--default"
+        disabled={true}
+        onClick={[MockFunction decrement]}
+      >
+        -
+      </button>
+    </Button>
+    <Button
+      appearance="default"
+      classes="counter-actions__action counter-actions__action--increment"
+      disabled={false}
+      onClick={[MockFunction increment]}
+    >
+      <button
+        className="btn counter-actions__action counter-actions__action--increment btn--default"
+        disabled={false}
+        onClick={[MockFunction increment]}
+      >
+        +
+      </button>
+    </Button>
+    <Button
+      appearance="danger"
+      classes="counter-actions__action counter-actions__action--reset"
+      disabled={true}
+      onClick={[MockFunction reset]}
+    >
+      <button
+        className="btn counter-actions__action counter-actions__action--reset btn--danger"
+        disabled={true}
+        onClick={[MockFunction reset]}
+      >
+        Reset
+      </button>
+    </Button>
+  </footer>
+</CounterActions>
+`;
