@@ -5,10 +5,6 @@ import { Button } from "./button";
 
 let handleOnClick = jest.fn();
 
-afterEach(() => {
-  jest.resetAllMocks();
-});
-
 // Test render
 describe("Button - test render", () => {
   it("should render without crashing", () => {
@@ -106,7 +102,7 @@ describe("Button - render", () => {
       expect(component.find("button.btn").prop("type")).toEqual("button");
     });
 
-    it("should pass child prop content as direct decendants of the button DOM node", () => {
+    it("should pass child prop content as direct descendants of the button DOM node", () => {
       expect(component.find("button.btn").childAt(0).text()).toEqual(
         "Button label"
       );
