@@ -5,7 +5,7 @@ import {
   CounterDispatchContext,
   useCounterStateContext,
   useCounterDispatchContext, 
-} from "./counter-context";
+} from "../store";
 
 describe("CounterStateContext", () => {
   it("should receive the correct value passed down from a CounterStateContext.Provider", () => {

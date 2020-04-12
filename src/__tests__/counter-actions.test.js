@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
-import { CounterActions } from "./counter-actions";
-import { useCounterStateContext } from "../../store";
+import { CounterActions } from "../components/counter-actions";
+import { useCounterStateContext } from "../store";
 
-jest.mock("../../store", () => ({
+jest.mock("../store", () => ({
   useCounterStateContext: jest.fn().mockReturnValue(0),
   useCounterDispatchContext: jest.fn().mockReturnValue({
     increment: jest.fn().mockName('increment'),

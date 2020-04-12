@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
-import { CounterContainer } from "./counter-container";
+import { CounterContainer } from "../components/counter-container";
 
 // Test render
 describe("CounterContainer - test render", () => {

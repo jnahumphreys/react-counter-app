@@ -1,4 +1,4 @@
-import { counterReducer } from "./counter-reducer";
+import { counterReducer } from "../store/counter-reducer";
 
 const getInitialState = (initialCount = 0) => {
   return {

@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
-import { CounterOutput } from "./counter-output";
+import { CounterOutput } from "../components/counter-output";
 
-jest.mock("../../store", () => ({
+jest.mock("../store", () => ({
   useCounterStateContext: jest.fn().mockReturnValue(0)
 }))
 

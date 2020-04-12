@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import { useCounterStore } from "./use-counter-store";
+import { useCounterStore } from "../store";
 
 describe("useCounterStore", () => {
 
