@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`counterActionTypes should match snapshot 1`] = `
+Object {
+  "decrement": "decrement",
+  "increment": "increment",
+  "reset": "reset",
+}
+`;
