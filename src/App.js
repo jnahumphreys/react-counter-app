@@ -7,7 +7,7 @@ import { CounterActions } from "./components/counter-actions";
 import "./scss/styles.scss";
 
 export default function App() {
-  const {count, actions} = useCounterStore();
+  const { count, actions } = useCounterStore();
 
   return (
     <CounterStateContext.Provider value={count}>

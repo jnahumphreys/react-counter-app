@@ -23,5 +23,5 @@ export const useCounterStore = () => {
   }, [state.count])
   */
 
-  return {count, actions};
+  return { count, actions };
 };
