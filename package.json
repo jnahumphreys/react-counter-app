@@ -34,6 +34,7 @@
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.17.0",
     "typescript": "3.3.3"
   },
   "scripts": {
@@ -47,7 +48,9 @@
     "pretty:scss-check": "prettier --check './src/**/*.scss'",
     "pretty:scss-fix": "prettier --write './src/**/*.scss'",
     "lint-js": "eslint './src/**/*.{js, jsx}'",
-    "lint-js:fix": "npm run lint-js -- --fix"
+    "lint-js:fix": "npm run lint-js -- --fix",
+    "lint-scss": "stylelint './src/**/*.scss'",
+    "lint-scss:fix": "npm run lint-scss -- --fix"
   },
   "browserslist": [
     ">0.2%",
