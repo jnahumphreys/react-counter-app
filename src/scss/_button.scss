@@ -11,10 +11,11 @@
   transition: opacity 0.2s ease-in;
 
   &:not([disabled]) {
-    cursor: pointer;
+    cursor: none;
   }
 
   &:not([disabled]) {
+    cursor: pointer;
     &:hover,
     &:focus {
       opacity: 0.9;
