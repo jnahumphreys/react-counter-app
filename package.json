@@ -17,6 +17,14 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
     "enzyme-to-json": "3.4.4",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-standard": "^4.0.1",
     "jsdom": "16.2.2",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.4",
@@ -32,7 +40,9 @@
     "pretty:js-check": "prettier --check './src/**/*.{js,jsx}'",
     "pretty:js-fix": "prettier --write './src/**/*.{js,jsx}'",
     "pretty:scss-check": "prettier --check './src/**/*.scss'",
-    "pretty:scss-fix": "prettier --write './src/**/*.scss'"
+    "pretty:scss-fix": "prettier --write './src/**/*.scss'",
+    "lint-js": "eslint './src/**/*.{js, jsx}'",
+    "lint-js:fix": "npm run lint-js --fix"
   },
   "browserslist": [
     ">0.2%",
