@@ -23,7 +23,7 @@ describe("CounterActions - test render", () => {
 // Render
 describe("CounterActions - render", () => {
   it("should match snapshot", () => {
-    let component = mount(<CounterActions />);
+    const component = mount(<CounterActions />);
     expect(toJson(component)).toMatchSnapshot();
   });
 

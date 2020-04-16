@@ -1,6 +1,10 @@
 import React from "react";
-import { CounterStateContext, CounterDispatchContext } from "./store";
-import { useCounterStore } from "./store";
+import {
+  CounterStateContext,
+  CounterDispatchContext,
+  useCounterStore,
+} from "./store";
+
 import { CounterContainer } from "./components/counter-container";
 import { CounterOutput } from "./components/counter-output";
 import { CounterActions } from "./components/counter-actions";

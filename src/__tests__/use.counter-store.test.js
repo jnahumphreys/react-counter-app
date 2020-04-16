@@ -28,7 +28,7 @@ describe("useCounterStore", () => {
 
 describe("useCounterStore - actions", () => {
   it("should increment the count value on call of 'increment' dispatch function", () => {
-    let { result } = renderHook(() => useCounterStore());
+    const { result } = renderHook(() => useCounterStore());
 
     act(() => {
       result.current.actions.increment();
@@ -38,7 +38,7 @@ describe("useCounterStore - actions", () => {
   });
 
   it("should decrement the count value on call of 'decrement' dispatch function", () => {
-    let { result } = renderHook(() => useCounterStore());
+    const { result } = renderHook(() => useCounterStore());
 
     act(() => {
       result.current.actions.decrement();
@@ -48,7 +48,7 @@ describe("useCounterStore - actions", () => {
   });
 
   it("should decrement the count value on call of 'reset' dispatch function", () => {
-    let { result } = renderHook(() => useCounterStore());
+    const { result } = renderHook(() => useCounterStore());
 
     act(() => {
       result.current.actions.increment();

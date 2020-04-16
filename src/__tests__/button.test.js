@@ -3,7 +3,7 @@ import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { Button } from "../components/button";
 
-let handleOnClick = jest.fn();
+const handleOnClick = jest.fn();
 
 // Test render
 describe("Button - test render", () => {
@@ -141,6 +141,8 @@ describe("Button - render", () => {
       });
 
       it("should not fire the callback function passed to the 'onClick' prop, when the button is disabled and clicked", () => {
+        component.simulate("click");
+
         expect(handleOnClick).toHaveBeenCalledTimes(0);
       });
     });

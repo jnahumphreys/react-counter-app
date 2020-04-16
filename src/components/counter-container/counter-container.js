@@ -1,5 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const CounterContainer = ({ children }) => {
-  return <div className="counter-container">{children}</div>;
+export const CounterContainer = (props) => {
+  return <div className="counter-container">{props.children}</div>;
+};
+
+CounterContainer.propTypes = {
+  children: PropTypes.node,
 };

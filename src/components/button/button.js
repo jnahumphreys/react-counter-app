@@ -45,6 +45,10 @@ Button.propTypes = {
   Allows the passing of content within the Button (typically the label)
   */
   children: PropTypes.node,
+  /*
+  Allows the passing of additional DOM attributes to the button DOM node
+  */
+  additionalAttrs: PropTypes.object,
 };
 
 Button.defaultProps = {
