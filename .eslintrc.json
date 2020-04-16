@@ -7,7 +7,7 @@
     "extends": [
     		"standard",
         "plugin:react/recommended",
-        "prettier"
+        "plugin:prettier/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -26,12 +26,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "prettier"
+        "react"
     ],
-    "rules": {
-    	"prettier/prettier": "error"
-    },
     "settings": {
     	"react": {
     		"version": "detect"
