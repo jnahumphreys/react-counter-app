@@ -1,8 +1,19 @@
 {
   "name": "react-counter-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "React counter app",
   "keywords": [],
+  "homepage": "https://github.com/BinaryJim/react-counter-app",
+  "license": "MIT",
+  "author": {
+	  "name": "James Humphreys",
+	  "url": "https://github.com/BinaryJim"
+	},
+  "repository": {
+  	"type": "git",
+  	"url": "https://github.com/BinaryJim/react-tasks-app.git"
+  },
+  "private": true,
   "main": "src/index.js",
   "dependencies": {
     "classnames": "2.2.6",
