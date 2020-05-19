@@ -6,12 +6,12 @@
   "homepage": "https://github.com/BinaryJim/react-counter-app",
   "license": "MIT",
   "author": {
-	  "name": "James Humphreys",
-	  "url": "https://github.com/BinaryJim"
-	},
+    "name": "James Humphreys",
+    "url": "https://github.com/BinaryJim"
+  },
   "repository": {
-  	"type": "git",
-  	"url": "https://github.com/BinaryJim/react-tasks-app.git"
+    "type": "git",
+    "url": "https://github.com/BinaryJim/react-tasks-app.git"
   },
   "private": true,
   "main": "src/index.js",
@@ -37,6 +37,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.2.0",
     "jsdom": "16.2.2",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.4",
