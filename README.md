@@ -2,7 +2,7 @@
 [React](https://reactjs.org/) based task list single page application.
 
 **Demo:**  
-To follow.
+[https://binaryjim.github.io/react-counter-app/](https://binaryjim.github.io/react-counter-app/)
 
 ## Application overview
 
