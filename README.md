@@ -63,4 +63,4 @@ Built by James Humphreys - [BinaryJim](https://github.com/BinaryJim)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/binaryjim/react-counter-app/blob/master/license.txt) file for details
+This project is licensed under the MIT License - see the [LICENSE.txt](https://github.com/binaryjim/react-counter-app/blob/master/license.txt) file for details
