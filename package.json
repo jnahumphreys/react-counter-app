@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React counter app",
   "keywords": [],
-  "homepage": "https://github.com/BinaryJim/react-counter-app",
+  "homepage": "https://binaryjim.github.io/react-counter-app",
   "license": "MIT",
   "author": {
     "name": "James Humphreys",
@@ -52,6 +52,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom --setupFiles ./src/setupTests.js",
     "test:coverage": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
