@@ -29,7 +29,7 @@ function CounterActions() {
 
       <Button onClick={increment}>+</Button>
 
-      <ResetCountButton disabled={!count > 0} onClick={reset}>
+      <ResetCountButton disabled={!(count > 0)} onClick={reset}>
         Reset
       </ResetCountButton>
     </Container>

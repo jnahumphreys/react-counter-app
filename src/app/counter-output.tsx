@@ -31,7 +31,7 @@ export const CounterOutput = () => {
 
   return (
     <Container>
-      <span>{count}</span>
+      <span>{count.toString()}</span>
     </Container>
   );
 };

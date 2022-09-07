@@ -43,7 +43,11 @@ const Container = styled.div({
   width: "100%",
 });
 
-function Layout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
   return (
     <Wrapper>
       <Container>{children}</Container>

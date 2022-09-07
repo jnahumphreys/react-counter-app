@@ -4,9 +4,22 @@ const counterActionTypes = {
   INCREMENT: "INCREMENT",
   DECREMENT: "DECREMENT",
   RESET: "RESET",
-};
+} as const;
 
-function counterReducer(state, action) {
+interface counterReducerState {
+  count: number;
+}
+
+interface counterReducerAction {
+  type: keyof typeof counterActionTypes;
+}
+
+const initialCount = 0;
+
+function counterReducer(
+  state: counterReducerState,
+  action: counterReducerAction
+): counterReducerState {
   switch (action.type) {
     case counterActionTypes.INCREMENT:
       return { count: state.count + 1 };
@@ -19,8 +32,17 @@ function counterReducer(state, action) {
   }
 }
 
-function useCounterReducer() {
-  const initialState = { count: 0 };
+interface counterReducerActions {
+  increment: () => void;
+  decrement: () => void;
+  reset: () => void;
+}
+
+function useCounterReducer(): {
+  count: number;
+  actions: counterReducerActions;
+} {
+  const initialState = { count: initialCount };
 
   const [state, dispatch] = useReducer(counterReducer, initialState);
 
@@ -43,13 +65,23 @@ function useCounterReducer() {
   return { count, actions };
 }
 
-const CounterReducerStateContext = React.createContext();
-const CounterReducerActionsContext = React.createContext();
+const CounterReducerStateContext = React.createContext<number>(initialCount);
+const CounterReducerActionsContext = React.createContext<counterReducerActions>(
+  {
+    increment: () => {},
+    decrement: () => {},
+    reset: () => {},
+  }
+);
 
 const useCounterState = () => useContext(CounterReducerStateContext);
 const useCounterActions = () => useContext(CounterReducerActionsContext);
 
-function CounterProvider({ children }) {
+interface counterProviderProps {
+  children: React.ReactNode;
+}
+
+function CounterProvider({ children }: counterProviderProps) {
   const { count, actions } = useCounterReducer();
 
   return (
