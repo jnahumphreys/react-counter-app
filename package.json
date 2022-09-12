@@ -2,6 +2,9 @@
   "name": "react-counter-app",
   "version": "1.9.1",
   "description": "React counter app",
+  "engines": {
+    "node": ">=16.15.1 <17.0.0"
+  },
   "keywords": [],
   "homepage": "https://binaryjim.github.io/react-counter-app",
   "license": "MIT",
