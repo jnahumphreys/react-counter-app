@@ -1,6 +1,6 @@
 {
   "name": "react-counter-app",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "React counter app",
   "keywords": [],
   "homepage": "https://binaryjim.github.io/react-counter-app",
@@ -21,14 +21,14 @@
     "@types/node": "^18.7.15",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
-    "eslint": "^8.23.0",
-    "eslint-config-prettier": "^8.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.10.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
