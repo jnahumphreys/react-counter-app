@@ -16,6 +16,9 @@
     "type": "git",
     "url": "https://github.com/BinaryJim/react-tasks-app.git"
   },
+  "bugs": {
+    "url": "https://github.com/BinaryJim/react-counter-app/issues"
+  },
   "private": true,
   "main": "src/index.js",
   "dependencies": {
