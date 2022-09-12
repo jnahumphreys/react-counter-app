@@ -1,0 +1,30 @@
+name: Lint Build and Test
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  lint_build_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v3
+        
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          
+      - name: Install dependencies
+        run: npm ci --omit=dev --ignore-scripts
+
+      - name: Lint JavaScript
+        run: npm run lint
+
+      - name: Check formatting with Prettier
+        run: npm run check-formatting
+
+      - name: Build App
+        run: npm run build
