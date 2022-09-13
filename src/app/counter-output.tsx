@@ -31,7 +31,7 @@ export const CounterOutput = () => {
 
   return (
     <Container>
-      <span>{count.toString()}</span>
+      <span aria-label="Count value">{count.toString()}</span>
     </Container>
   );
 };
