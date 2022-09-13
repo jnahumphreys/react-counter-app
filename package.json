@@ -1,6 +1,6 @@
 {
   "name": "react-counter-app",
-  "version": "1.10.2",
+  "version": "1.11.2",
   "description": "React counter app",
   "engines": {
     "node": ">=16.15.1 <17.0.0"
