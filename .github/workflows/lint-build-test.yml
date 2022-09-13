@@ -28,3 +28,6 @@ jobs:
 
       - name: Build App
         run: npm run build
+
+      - name: E2E test App
+        run: npm run test:ci
