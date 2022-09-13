@@ -41,6 +41,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "start-server-and-test": "^1.14.0",
     "typescript": "^4.8.2"
   },
   "scripts": {
@@ -53,7 +54,8 @@
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "check-formatting": "prettier --check 'src/**/*.{ts,tsx}'",
     "fix-formatting": "npm run check-formatting -- --write",
-    "test": "cypress open"
+    "test": "cypress open",
+    "test:ci": "start-server-and-test 'BROWSER=none CI=true react-scripts start' http://localhost:3000 'cypress run --config video=false'"
   },
   "browserslist": [
     ">0.2%",
