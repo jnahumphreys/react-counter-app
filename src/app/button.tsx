@@ -17,7 +17,7 @@ const Button = styled.button({
   "&:not([disabled])": {
     cursor: "pointer",
 
-    "&:hover, &:focus": {
+    "&:hover": {
       opacity: "0.9",
     },
   },
