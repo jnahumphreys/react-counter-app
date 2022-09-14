@@ -57,7 +57,7 @@ function useCounterReducer(): {
   actions: counterReducerActions;
 } {
   const [localStorageCountValue, setLocalStorageCountValue] =
-    useLocalStorageCountValue("binaryJimCountAppValue", initialCount);
+    useLocalStorageCountValue("binaryJimCounterAppValue", initialCount);
 
   const [state, dispatch] = useReducer(
     counterReducer,
