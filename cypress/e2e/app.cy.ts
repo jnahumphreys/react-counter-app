@@ -2,10 +2,10 @@ describe("React Counter App", () => {
   beforeEach(() => {
     cy.visit("index.html");
 
-    cy.findByLabelText("Count value").as("countValue");
-    cy.findByRole("button", { name: "Increment" }).as("incrementValue");
-    cy.findByRole("button", { name: "Decrement" }).as("decrementValue");
-    cy.findByRole("button", { name: "Reset" }).as("resetValue");
+    cy.get("[data-cy='count']").as("countValue");
+    cy.get("[data-cy='increment']").as("incrementValue");
+    cy.get("[data-cy='decrement']").as("decrementValue");
+    cy.get("[data-cy='reset']").as("resetValue");
   });
 
   it("loads with the correct initial count value", () => {
