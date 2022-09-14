@@ -13,9 +13,11 @@ This is a simple React based counter app to allow a user to increment, decrement
 - CSS in JS styling using emotion
 - Replicating a basic Redux style store using a JavaScript reducer along with React `useReducer` hook.
 - Sharing the global state and reducer actions to the application component tree using React `useContext` hook
+- Persisting the count value using browser localStorage API
 - Dark mode support using `prefers-color-scheme` media query
-- Husky pre-commit hooks for linting and formatting
+- Husky pre-commit hooks for linting and formatting or source-code
 - GitHub actions for CI / CD pipelines
+- End to End testing using Cypress
 
 ## Getting started
 
@@ -77,6 +79,14 @@ Pre-commit hooks will run using Husky to:
 
 - Lint all committed source (js, jsx, ts, tsx) using ESLint rules
 - Format all known filetypes using Prettier
+
+### Testing
+
+Tests can be run (end to end) using [Cypress](https://www.cypress.io/). **Note:** An instance of the application must be running for the test suite to function; run `npm run start` ensuring the default port of `3000` is used.
+
+```bash
+npm run test
+```
 
 ## Deployment
 

@@ -26,6 +26,16 @@ describe("React Counter App", () => {
     cy.get("@countValue").should("contain", "0");
   });
 
+  it("persists count changes", () => {
+    cy.get("@incrementValue").click();
+    cy.get("@incrementValue").click();
+    cy.get("@countValue").should("contain", "2");
+    cy.get("@decrementValue").click();
+    cy.get("@countValue").should("contain", "1");
+    cy.reload();
+    cy.get("@countValue").should("contain", "1");
+  });
+
   it("prevents a user reseting the count value when zero", () => {
     cy.get("@resetValue").should("be.disabled");
   });
