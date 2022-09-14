@@ -47,6 +47,7 @@
   "scripts": {
     "prepare": "husky install",
     "start": "react-scripts start",
+    "start:ci": "BROWSER=none CI=true npm start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -54,8 +55,7 @@
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "check-formatting": "prettier --check 'src/**/*.{ts,tsx}'",
     "fix-formatting": "npm run check-formatting -- --write",
-    "test": "cypress open",
-    "test:ci": "start-server-and-test 'BROWSER=none CI=true react-scripts start' http://localhost:3000 'cypress run --config video=false'"
+    "test": "cypress open"
   },
   "browserslist": [
     ">0.2%",
