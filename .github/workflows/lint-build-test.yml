@@ -26,5 +26,10 @@ jobs:
       - name: Check formatting with Prettier
         run: npm run check-formatting
 
-      - name: Build App
-        run: npm run build
+      - name: Build and E2E test App
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm run start:ci
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 120
+          config: video=false

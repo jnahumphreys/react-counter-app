@@ -23,13 +23,20 @@ function CounterActions() {
 
   return (
     <Container>
-      <Button disabled={count <= 0} onClick={decrement}>
+      <Button
+        disabled={count <= 0}
+        onClick={decrement}
+        aria-label="Decrement"
+        data-cy="decrement"
+      >
         -
       </Button>
 
-      <Button onClick={increment}>+</Button>
+      <Button onClick={increment} aria-label="Increment" data-cy="increment">
+        +
+      </Button>
 
-      <ResetCountButton disabled={!(count > 0)} onClick={reset}>
+      <ResetCountButton disabled={!(count > 0)} onClick={reset} data-cy="reset">
         Reset
       </ResetCountButton>
     </Container>
