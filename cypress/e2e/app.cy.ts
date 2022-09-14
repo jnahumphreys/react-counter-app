@@ -1,6 +1,6 @@
 describe("React Counter App", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("index.html");
 
     cy.findByLabelText("Count value").as("countValue");
     cy.findByRole("button", { name: "Increment" }).as("incrementValue");
