@@ -29,10 +29,7 @@ jobs:
       - name: Build and E2E test App
         uses: cypress-io/github-action@v4
         with:
-          start: "npm start"
+          start: "'BROWSER=none CI=true npx react-scripts start'"
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
-          record: false
-        env:
-          REACT_APP_BROWSER: none
-          REACT_APP_CI: true
+          config: video=false
