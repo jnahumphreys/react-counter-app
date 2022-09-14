@@ -1,4 +1,4 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 
 const counterActionTypes = {
   INCREMENT: "INCREMENT",
@@ -38,13 +38,32 @@ interface counterReducerActions {
   reset: () => void;
 }
 
+function useLocalStorageCountValue(
+  key: string,
+  defaultValue: number
+): [number, (value: number) => void] {
+  const value = localStorage.getItem(key)
+    ? Number(localStorage.getItem(key))
+    : defaultValue;
+
+  return [
+    value,
+    (value: number) => localStorage.setItem(key, value.toString()),
+  ];
+}
+
 function useCounterReducer(): {
   count: number;
   actions: counterReducerActions;
 } {
-  const initialState = { count: initialCount };
+  const [localStorageCountValue, setLocalStorageCountValue] =
+    useLocalStorageCountValue("binaryJimCountAppValue", initialCount);
 
-  const [state, dispatch] = useReducer(counterReducer, initialState);
+  const [state, dispatch] = useReducer(
+    counterReducer,
+    localStorageCountValue,
+    (count) => ({ count })
+  );
 
   const count = state.count;
 
@@ -54,13 +73,9 @@ function useCounterReducer(): {
     reset: () => dispatch({ type: counterActionTypes.RESET }),
   };
 
-  /*
-  For later enhancement to add local storage persistance, much like redux "store.subscribe"
-
   useEffect(() => {
-    console.log('Count changed')
-  }, [state.count])
-  */
+    setLocalStorageCountValue(count);
+  }, [count, setLocalStorageCountValue]);
 
   return { count, actions };
 }
