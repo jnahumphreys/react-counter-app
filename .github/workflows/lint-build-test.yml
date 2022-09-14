@@ -20,11 +20,11 @@ jobs:
       - name: Install dependencies
         run: npm ci --ignore-scripts
 
-      - name: Lint JavaScript
-        run: npm run lint
+      # - name: Lint JavaScript
+      #   run: npm run lint
 
-      - name: Check formatting with Prettier
-        run: npm run check-formatting
+      # - name: Check formatting with Prettier
+      #   run: npm run check-formatting
 
       - name: Build and E2E test App
         uses: cypress-io/github-action@v4
@@ -34,5 +34,5 @@ jobs:
           wait-on-timeout: 120
           record: false
         env:
-          BROWSER: none
-          CI: true
+          REACT_APP_BROWSER: none
+          REACT_APP_CI: true
