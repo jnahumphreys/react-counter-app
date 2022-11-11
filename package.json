@@ -34,7 +34,7 @@
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.10.0",
     "@testing-library/cypress": "^8.0.3",
-    "cypress": "^10.7.0",
+    "cypress": "^11.0.1",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "gh-pages": "^4.0.0",
