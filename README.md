@@ -3,7 +3,7 @@
 [React](https://reactjs.org/) based counter single page application built with [TypeScript](https://www.typescriptlang.org/).
 
 **Demo:**  
-[https://binaryjim.github.io/react-counter-app/](https://binaryjim.github.io/react-counter-app/)
+[https://jnahumphreys.github.io/react-counter-app/](https://jnahumphreys.github.io/react-counter-app/)
 
 ## Application overview
 
@@ -104,8 +104,8 @@ npm run build
 
 ## Author
 
-Built by James Humphreys - [BinaryJim](https://github.com/BinaryJim)
+Built by [James Humphreys] - (https://github.com/jnahumphreys)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.txt](https://github.com/binaryjim/react-counter-app/blob/master/license.txt) file for details
+This project is licensed under the MIT License - see the [LICENSE.txt](https://github.com/jnahumphreys/react-counter-app/blob/master/license.txt) file for details
