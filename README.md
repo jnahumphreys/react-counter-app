@@ -104,7 +104,7 @@ npm run build
 
 ## Author
 
-Built by [James Humphreys] - (https://github.com/jnahumphreys)
+Built by [James Humphreys](https://github.com/jnahumphreys)
 
 ## License
 
