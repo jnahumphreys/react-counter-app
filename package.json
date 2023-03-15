@@ -1,9 +1,9 @@
 {
   "name": "react-counter-app",
-  "version": "1.13.1",
+  "version": "1.14.0",
   "description": "React counter app",
   "engines": {
-    "node": ">=16.15.1 <17.0.0"
+    "node": ">=18.15.0 <19.0.0"
   },
   "keywords": [],
   "homepage": "https://jnahumphreys.github.io/react-counter-app",
@@ -33,11 +33,11 @@
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.10.0",
-    "@testing-library/cypress": "^8.0.7",
-    "cypress": "^11.1.0",
+    "@testing-library/cypress": "^9.0.0",
+    "cypress": "^12.8.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
-    "gh-pages": "^4.0.0",
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
@@ -57,13 +57,25 @@
     "test:headless": "cypress run",
     "eject": "react-scripts eject"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "eslintConfig": {
-    "extends": ["react-app", "prettier"],
-    "plugins": ["@emotion"]
+    "extends": [
+      "react-app",
+      "prettier"
+    ],
+    "plugins": [
+      "@emotion"
+    ]
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint",
-    "*": ["prettier --ignore-unknown --write"]
+    "*": [
+      "prettier --ignore-unknown --write"
+    ]
   }
 }
