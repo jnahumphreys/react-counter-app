@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 import { useCounterState } from "./counter-provider";
 
@@ -26,14 +25,20 @@ const Container = styled.div({
   },
 });
 
-export const CounterOutput = () => {
+function CountValue() {
   const count = useCounterState();
 
   return (
+    <span aria-label="Count value" data-cy="count">
+      {count.toString()}
+    </span>
+  );
+}
+
+export const CounterOutput = () => {
+  return (
     <Container>
-      <span aria-label="Count value" data-cy="count">
-        {count.toString()}
-      </span>
+      <CountValue />
     </Container>
   );
 };
