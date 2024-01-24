@@ -43,4 +43,16 @@ describe("React Counter App", () => {
   it("prevents a user decrementing the count below zero", () => {
     cy.get("@decrementValue").should("be.disabled");
   });
+
+  it("supports clients with local storage disabled", () => {
+    cy.window().then((win) => {
+      cy.stub(win.localStorage, "setItem").throws();
+      cy.stub(win.localStorage, "getItem").throws();
+
+      cy.get("@incrementValue").click();
+      cy.get("@countValue").should("contain", "1");
+      cy.reload();
+      cy.get("@countValue").should("contain", "0");
+    });
+  });
 });

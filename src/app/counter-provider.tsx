@@ -38,16 +38,24 @@ function counterReducer(
   }
 }
 
-const LOCAL_STORAGE_KEY = "binaryJimCounterAppValue" as const;
+const LOCAL_STORAGE_KEY = "jnahumphreys_counter_app_value" as const;
 
 function setLocalStorageCountValue(value: number) {
-  localStorage.setItem(LOCAL_STORAGE_KEY, value.toString());
+  try {
+    localStorage.setItem(LOCAL_STORAGE_KEY, value.toString());
+  } catch (error) {
+    return false;
+  }
 }
 
 function getLocalStorageCountValue() {
-  const localStorageValue = localStorage.getItem(LOCAL_STORAGE_KEY);
+  try {
+    const localStorageValue = localStorage.getItem(LOCAL_STORAGE_KEY);
 
-  return localStorageValue ? Number(localStorageValue) : false;
+    return localStorageValue ? Number(localStorageValue) : false;
+  } catch (error) {
+    return false;
+  }
 }
 
 function initCounterReducerState(initialValue: number): CounterReducerState {
