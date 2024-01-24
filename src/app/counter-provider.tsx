@@ -1,103 +1,148 @@
-import React, { useContext, useEffect, useReducer } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useReducer,
+  useCallback,
+  useMemo,
+} from "react";
 
-const counterActionTypes = {
+const COUNTER_ACTION_TYPES = {
   INCREMENT: "INCREMENT",
   DECREMENT: "DECREMENT",
   RESET: "RESET",
 } as const;
 
-interface counterReducerState {
-  count: number;
-}
+type Count = number;
 
-interface counterReducerAction {
-  type: keyof typeof counterActionTypes;
-}
+type CounterReducerState = {
+  count: Count;
+};
 
-const initialCount = 0;
+type CounterReducerAction = {
+  type: keyof typeof COUNTER_ACTION_TYPES;
+};
 
 function counterReducer(
-  state: counterReducerState,
-  action: counterReducerAction
-): counterReducerState {
+  state: CounterReducerState,
+  action: CounterReducerAction
+): CounterReducerState {
   switch (action.type) {
-    case counterActionTypes.INCREMENT:
+    case COUNTER_ACTION_TYPES.INCREMENT:
       return { count: state.count + 1 };
-    case counterActionTypes.DECREMENT:
+    case COUNTER_ACTION_TYPES.DECREMENT:
       return { count: state.count - 1 };
-    case counterActionTypes.RESET:
+    case COUNTER_ACTION_TYPES.RESET:
       return { count: 0 };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
 }
 
-interface counterReducerActions {
-  increment: () => void;
-  decrement: () => void;
-  reset: () => void;
+const LOCAL_STORAGE_KEY = "binaryJimCounterAppValue" as const;
+
+function setLocalStorageCountValue(value: number) {
+  localStorage.setItem(LOCAL_STORAGE_KEY, value.toString());
 }
 
-function useLocalStorageCountValue(
-  key: string,
-  defaultValue: number
-): [number, (value: number) => void] {
-  const value = localStorage.getItem(key)
-    ? Number(localStorage.getItem(key))
-    : defaultValue;
+function getLocalStorageCountValue() {
+  const localStorageValue = localStorage.getItem(LOCAL_STORAGE_KEY);
 
-  return [
-    value,
-    (value: number) => localStorage.setItem(key, value.toString()),
-  ];
+  return localStorageValue ? Number(localStorageValue) : false;
 }
+
+function initCounterReducerState(initialValue: number): CounterReducerState {
+  return {
+    count: getLocalStorageCountValue() || initialValue,
+  };
+}
+
+type Increment = () => void;
+type Decrement = () => void;
+type Reset = () => void;
+
+type CounterReducerActions = {
+  increment: Increment;
+  decrement: Decrement;
+  reset: Reset;
+};
+
+const INITIAL_COUNT = 0 as const;
 
 function useCounterReducer(): {
-  count: number;
-  actions: counterReducerActions;
+  count: Count;
+  increment: Increment;
+  decrement: Decrement;
+  reset: Reset;
 } {
-  const [localStorageCountValue, setLocalStorageCountValue] =
-    useLocalStorageCountValue("binaryJimCounterAppValue", initialCount);
-
   const [state, dispatch] = useReducer(
     counterReducer,
-    localStorageCountValue,
-    (count) => ({ count })
+    INITIAL_COUNT,
+    initCounterReducerState
   );
 
   const count = state.count;
 
-  const actions = {
-    increment: () => dispatch({ type: counterActionTypes.INCREMENT }),
-    decrement: () => dispatch({ type: counterActionTypes.DECREMENT }),
-    reset: () => dispatch({ type: counterActionTypes.RESET }),
-  };
+  const increment = useCallback(
+    () => dispatch({ type: COUNTER_ACTION_TYPES.INCREMENT }),
+    []
+  );
+  const decrement = useCallback(
+    () => dispatch({ type: COUNTER_ACTION_TYPES.DECREMENT }),
+    []
+  );
+  const reset = useCallback(
+    () => dispatch({ type: COUNTER_ACTION_TYPES.RESET }),
+    []
+  );
 
   useEffect(() => {
     setLocalStorageCountValue(count);
-  }, [count, setLocalStorageCountValue]);
+  }, [count]);
 
-  return { count, actions };
+  return { count, increment, decrement, reset };
 }
 
-const CounterReducerStateContext = React.createContext<number>(initialCount);
-const CounterReducerActionsContext = React.createContext<counterReducerActions>(
-  {
-    increment: () => {},
-    decrement: () => {},
-    reset: () => {},
-  }
+const CounterReducerStateContext = React.createContext<Count | undefined>(
+  undefined
 );
 
-const useCounterState = () => useContext(CounterReducerStateContext);
-const useCounterActions = () => useContext(CounterReducerActionsContext);
+function useCounterState() {
+  const counterStateContext = useContext(CounterReducerStateContext);
 
-interface counterProviderProps {
-  children: React.ReactNode;
+  if (counterStateContext === undefined) {
+    throw new Error(
+      "useCounterState must be used within a CounterStateProvider"
+    );
+  }
+  return counterStateContext;
 }
 
-function CounterProvider({ children }: counterProviderProps) {
-  const { count, actions } = useCounterReducer();
+const CounterReducerActionsContext = React.createContext<
+  CounterReducerActions | undefined
+>(undefined);
+
+function useCounterActions() {
+  const counterActionsContext = useContext(CounterReducerActionsContext);
+
+  if (counterActionsContext === undefined) {
+    throw new Error(
+      "useCounterActions must be used within a CounterActionsProvider"
+    );
+  }
+  return counterActionsContext;
+}
+
+interface CounterProviderProps {
+  children?: React.ReactNode;
+}
+
+function CounterProvider({ children }: CounterProviderProps) {
+  const { count, increment, decrement, reset } = useCounterReducer();
+
+  const actions = useMemo(
+    () => ({ increment, decrement, reset }),
+    [increment, decrement, reset]
+  );
 
   return (
     <CounterReducerStateContext.Provider value={count}>
