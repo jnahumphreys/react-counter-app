@@ -38,7 +38,7 @@ function counterReducer(
   }
 }
 
-const LOCAL_STORAGE_KEY = "binaryJimCounterAppValue" as const;
+const LOCAL_STORAGE_KEY = "jnahumphreys_counter_app_value" as const;
 
 function setLocalStorageCountValue(value: number) {
   try {
