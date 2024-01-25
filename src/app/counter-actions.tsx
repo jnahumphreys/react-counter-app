@@ -2,6 +2,7 @@ import { memo } from "react";
 import styled from "@emotion/styled";
 import { useCounterState, useCounterActions } from "./counter-provider";
 import { Button } from "./button";
+import { COUNTER_VALUE_CONTAINER_ID } from "./counter-output";
 
 function DecrementCount() {
   const count = useCounterState();
@@ -58,7 +59,11 @@ const Container = styled.div({
 
 function CounterActions() {
   return (
-    <Container>
+    <Container
+      aria-label="Counter actions"
+      role="toolbar"
+      aria-controls={COUNTER_VALUE_CONTAINER_ID}
+    >
       <DecrementCount />
       <IncrementCount />
       <ResetCount />
