@@ -39,7 +39,7 @@ const Wrapper = styled.main({
   },
 });
 
-const Container = styled.div({
+const Container = styled.section({
   width: "100%",
 });
 
@@ -50,7 +50,7 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   return (
     <Wrapper>
-      <Container>{children}</Container>
+      <Container aria-label="Counter">{children}</Container>
     </Wrapper>
   );
 }
