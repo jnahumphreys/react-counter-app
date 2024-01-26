@@ -28,7 +28,7 @@ const Button = memo(
       cursor: "not-allowed",
       opacity: "0.25",
     },
-  })
+  }),
 );
 
 export { Button };

@@ -24,7 +24,7 @@ type CounterReducerAction = {
 
 function counterReducer(
   state: CounterReducerState,
-  action: CounterReducerAction
+  action: CounterReducerAction,
 ): CounterReducerState {
   switch (action.type) {
     case COUNTER_ACTION_TYPES.INCREMENT:
@@ -85,22 +85,22 @@ function useCounterReducer(): {
   const [state, dispatch] = useReducer(
     counterReducer,
     INITIAL_COUNT,
-    initCounterReducerState
+    initCounterReducerState,
   );
 
   const count = state.count;
 
   const increment = useCallback(
     () => dispatch({ type: COUNTER_ACTION_TYPES.INCREMENT }),
-    []
+    [],
   );
   const decrement = useCallback(
     () => dispatch({ type: COUNTER_ACTION_TYPES.DECREMENT }),
-    []
+    [],
   );
   const reset = useCallback(
     () => dispatch({ type: COUNTER_ACTION_TYPES.RESET }),
-    []
+    [],
   );
 
   useEffect(() => {
@@ -111,7 +111,7 @@ function useCounterReducer(): {
 }
 
 const CounterReducerStateContext = React.createContext<Count | undefined>(
-  undefined
+  undefined,
 );
 
 function useCounterState() {
@@ -119,7 +119,7 @@ function useCounterState() {
 
   if (counterStateContext === undefined) {
     throw new Error(
-      "useCounterState must be used within a CounterStateProvider"
+      "useCounterState must be used within a CounterStateProvider",
     );
   }
   return counterStateContext;
@@ -134,7 +134,7 @@ function useCounterActions() {
 
   if (counterActionsContext === undefined) {
     throw new Error(
-      "useCounterActions must be used within a CounterActionsProvider"
+      "useCounterActions must be used within a CounterActionsProvider",
     );
   }
   return counterActionsContext;
@@ -149,7 +149,7 @@ function CounterProvider({ children }: CounterProviderProps) {
 
   const actions = useMemo(
     () => ({ increment, decrement, reset }),
-    [increment, decrement, reset]
+    [increment, decrement, reset],
   );
 
   return (

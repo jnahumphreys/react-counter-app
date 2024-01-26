@@ -34,7 +34,7 @@ const ResetCountButton = memo(
   styled(Button)({
     backgroundColor: "#bb2c22",
     flexBasis: "100%",
-  })
+  }),
 );
 
 function ResetCount() {
