@@ -37,7 +37,7 @@
     "cypress": "^13.6.3",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.1.1",
     "husky": "^9.0.6",
     "lint-staged": "^15.2.0",
     "prettier": "^2.7.1",
