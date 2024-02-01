@@ -5,3 +5,5 @@
 /cypress/downloads
 /cypress/screenshots
 /cypress/videos
+/.parcel-cache
+/dist

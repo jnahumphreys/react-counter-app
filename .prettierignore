@@ -2,3 +2,4 @@ node_modules
 .postcssrc
 .husky
 public
+dist

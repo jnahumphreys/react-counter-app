@@ -17,7 +17,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   root: true,
-  ignorePatterns: [".eslintrc.cjs", "tsconfig.json"],
+  ignorePatterns: [".eslintrc.cjs", "tsconfig.json", "dist/"],
   settings: {
     react: {
       version: "detect",
