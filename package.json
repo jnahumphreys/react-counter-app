@@ -21,7 +21,6 @@
     "url": "https://github.com/jnahumphreys/react-counter-app/issues"
   },
   "private": true,
-  "main": "src/index.js",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -56,6 +55,7 @@
   "scripts": {
     "prepare": "husky",
     "start": "parcel",
+    "start:profiling": "REACT_PROFILING=true parcel build",
     "start:ci": "BROWSER=none CI=true npm start",
     "build": "parcel build",
     "predeploy": "npm run build",
