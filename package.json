@@ -24,6 +24,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "clsx": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -55,7 +56,6 @@
   "scripts": {
     "prepare": "husky",
     "start": "parcel",
-    "start:profiling": "REACT_PROFILING=true parcel build",
     "start:ci": "BROWSER=none CI=true npm start",
     "build": "parcel build",
     "predeploy": "npm run build",
