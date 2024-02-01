@@ -59,7 +59,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "eslint -c .eslintrc.cjs .",
-    "check-formatting": "prettier --check 'src/**/*.{ts,tsx}'",
+    "check-formatting": "prettier --check .",
     "fix-formatting": "npm run check-formatting -- --write",
     "test": "cypress open",
     "test:headless": "cypress run"
