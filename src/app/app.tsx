@@ -1,4 +1,3 @@
-import React from "react";
 import { CounterProvider } from "./counter-provider";
 import { Layout } from "./layout";
 import { CounterOutput } from "./counter-output";

@@ -14,13 +14,13 @@ const COUNTER_ACTION_TYPES = {
 
 type Count = number;
 
-type CounterReducerState = {
+interface CounterReducerState {
   count: Count;
-};
+}
 
-type CounterReducerAction = {
+interface CounterReducerAction {
   type: keyof typeof COUNTER_ACTION_TYPES;
-};
+}
 
 function counterReducer(
   state: CounterReducerState,
@@ -34,7 +34,7 @@ function counterReducer(
     case COUNTER_ACTION_TYPES.RESET:
       return { count: 0 };
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      throw new Error(`Unhandled action type passed to counterReducer`);
   }
 }
 
@@ -68,11 +68,11 @@ type Increment = () => void;
 type Decrement = () => void;
 type Reset = () => void;
 
-type CounterReducerActions = {
+interface CounterReducerActions {
   increment: Increment;
   decrement: Decrement;
   reset: Reset;
-};
+}
 
 const INITIAL_COUNT = 0 as const;
 
