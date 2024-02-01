@@ -1,5 +1,6 @@
 {
   "name": "react-counter-app",
+  "source": "/src/index.html",
   "version": "1.16.0",
   "description": "React counter app",
   "engines": {
@@ -44,6 +45,7 @@
     "gh-pages": "^6.1.1",
     "husky": "^9.0.6",
     "lint-staged": "^15.2.0",
+    "parcel": "^2.11.0",
     "postcss": "^8.4.33",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
@@ -53,9 +55,9 @@
   },
   "scripts": {
     "prepare": "husky",
-    "start": "",
+    "start": "parcel",
     "start:ci": "BROWSER=none CI=true npm start",
-    "build": "",
+    "build": "parcel build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "eslint -c .eslintrc.cjs .",
@@ -64,12 +66,7 @@
     "test": "cypress open",
     "test:headless": "cypress run"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint",
     "*": [
