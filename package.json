@@ -24,56 +24,45 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
-    "@types/node": "^18.7.15",
-    "@types/react": "^18.0.18",
-    "@types/react-dom": "^18.0.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/eslint-plugin": "^11.10.0",
-    "@storybook/addon-essentials": "^7.6.10",
-    "@storybook/addon-interactions": "^7.6.10",
-    "@storybook/addon-links": "^7.6.10",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.10",
-    "@storybook/preset-create-react-app": "^7.6.10",
-    "@storybook/react": "^7.6.10",
-    "@storybook/react-webpack5": "^7.6.10",
-    "@storybook/test": "^7.6.10",
     "@testing-library/cypress": "^10.0.1",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "autoprefixer": "^10.4.17",
     "cypress": "^13.6.3",
-    "eslint": "^8.28.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^6.1.1",
     "husky": "^9.0.6",
     "lint-staged": "^15.2.0",
+    "postcss": "^8.4.33",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "prop-types": "^15.8.1",
     "storybook": "^7.6.10",
     "tailwindcss": "^3.4.1",
-    "typescript": "^4.9.3",
-    "webpack": "^5.90.0"
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "prepare": "husky",
-    "start": "react-scripts start",
+    "start": "",
     "start:ci": "BROWSER=none CI=true npm start",
-    "build": "react-scripts build",
+    "build": "",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint": "eslint -c .eslintrc.cjs .",
     "check-formatting": "prettier --check 'src/**/*.{ts,tsx}'",
     "fix-formatting": "npm run check-formatting -- --write",
     "test": "cypress open",
-    "test:headless": "cypress run",
-    "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "test:headless": "cypress run"
   },
   "browserslist": [
     ">0.2%",
@@ -81,16 +70,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "prettier",
-      "plugin:storybook/recommended"
-    ],
-    "plugins": [
-      "@emotion"
-    ]
-  },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint",
     "*": [
