@@ -1,5 +1,3 @@
-import { memo } from "react";
-import styled from "@emotion/styled";
 import { useCounterState, useCounterActions } from "./counter-provider";
 import { Button } from "./button";
 import { COUNTER_VALUE_CONTAINER_ID } from "./counter-output";
@@ -30,44 +28,34 @@ function IncrementCount() {
   );
 }
 
-const ResetCountButton = memo(
-  styled(Button)({
-    backgroundColor: "#bb2c22",
-    flexBasis: "100%",
-  }),
-);
-
 function ResetCount() {
   const count = useCounterState();
   const { reset } = useCounterActions();
 
   return (
-    <ResetCountButton disabled={!(count > 0)} onClick={reset} data-cy="reset">
+    <Button
+      disabled={!(count > 0)}
+      onClick={reset}
+      data-cy="reset"
+      className="basis-full bg-[#bb2c22]"
+    >
       Reset
-    </ResetCountButton>
+    </Button>
   );
 }
 
-const Container = styled.div({
-  display: "flex",
-  justifyContent: "space-between",
-  flexWrap: "wrap",
-  width: "100%",
-  maxWidth: "20rem",
-  margin: "0 auto",
-});
-
 function CounterActions() {
   return (
-    <Container
+    <div
       aria-label="Counter actions"
       role="toolbar"
       aria-controls={COUNTER_VALUE_CONTAINER_ID}
+      className="mx-auto flex w-full max-w-80 flex-wrap justify-between"
     >
       <DecrementCount />
       <IncrementCount />
       <ResetCount />
-    </Container>
+    </div>
   );
 }
 
