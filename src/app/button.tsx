@@ -1,34 +1,24 @@
-import { memo } from "react";
-import styled from "@emotion/styled";
+import React, { memo, useMemo } from "react";
+import { clsx } from "clsx";
 
-const Button = memo(
-  styled.button({
-    webkitAppearance: "none",
-    outline: "none",
-    padding: "0.5rem 0.75rem",
-    border: "none",
-    borderRadius: "0.25rem",
-    margin: "0.25rem",
-    fontSize: "1.25rem",
-    color: "#fff",
-    textTransform: "uppercase",
-    transition: "opacity 0.2s ease-in",
-    backgroundColor: "#1b6bce",
-    flex: "1 1 auto",
+/* TO DO: 
+- Look into why button text is off-centre on Y-Axis
+- Set webkitApperance: none
+*/
 
-    "&:not([disabled])": {
-      cursor: "pointer",
+type ButtonProps = React.ComponentPropsWithoutRef<"button">;
 
-      "&:hover": {
-        opacity: "0.9",
-      },
-    },
+const Button = memo(function Button({ className, ...rest }: ButtonProps) {
+  const classNames = useMemo(
+    () =>
+      clsx(
+        "m-1 flex-auto rounded border-none bg-[#1b6bce] px-3 py-2 text-xl uppercase leading-[normal] text-white transition-opacity duration-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-25 ",
+        className,
+      ),
+    [className],
+  );
 
-    "&[disabled]": {
-      cursor: "not-allowed",
-      opacity: "0.25",
-    },
-  }),
-);
+  return <button {...rest} className={classNames} />;
+});
 
 export { Button };
