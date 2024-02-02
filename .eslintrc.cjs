@@ -23,4 +23,7 @@ module.exports = {
       version: "detect",
     },
   },
+  rules: {
+    "react/prop-types": 0,
+  },
 };
