@@ -19,7 +19,20 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm install"
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "GitHub.vscode-pull-request-github",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "cSpell.language": "en-GB"
+      }
+    }
+  }
 
   // Configure tool-specific properties.
   // "customizations": {},
