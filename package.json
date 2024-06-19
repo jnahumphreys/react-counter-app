@@ -57,8 +57,7 @@
     "check-formatting": "prettier --check 'src/**/*.{ts,tsx}'",
     "fix-formatting": "npm run check-formatting -- --write",
     "test": "cypress open",
-    "test:headless": "cypress run",
-    "eject": "react-scripts eject"
+    "test:headless": "cypress run"
   },
   "browserslist": [
     ">0.2%",
