@@ -31,8 +31,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@emotion/babel-plugin": "^11.11.0",
     "@emotion/eslint-plugin": "^11.10.0",
     "@testing-library/cypress": "^9.0.0",
     "cypress": "^12.8.0",
