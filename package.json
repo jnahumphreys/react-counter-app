@@ -36,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "cypress": "^12.8.0",
-    "eslint": "^8.28.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
@@ -55,7 +55,7 @@
     "build": "parcel build --dist-dir build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint": "eslint -c .eslintrc.cjs src/**/*",
     "check-formatting": "prettier --check 'src/**/*.{ts,tsx}'",
     "fix-formatting": "npm run check-formatting -- --write",
     "test": "cypress open",
@@ -67,15 +67,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "prettier"
-    ],
-    "plugins": [
-      "@emotion"
-    ]
-  },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint",
     "*": [
