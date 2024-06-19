@@ -31,6 +31,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@emotion/babel-plugin": "^11.11.0",
     "@emotion/eslint-plugin": "^11.10.0",
     "@testing-library/cypress": "^9.0.0",
     "cypress": "^12.8.0",
@@ -41,13 +43,14 @@
     "lint-staged": "^13.0.3",
     "parcel": "^2.12.0",
     "prettier": "^2.7.1",
+    "process": "^0.11.10",
     "typescript": "^4.9.3"
   },
   "scripts": {
     "prepare": "husky install",
-    "start": "react-scripts start",
+    "start": "parcel --dist-dir build --port 3000",
     "start:ci": "BROWSER=none CI=true npm start",
-    "build": "react-scripts build",
+    "build": "parcel build --dist-dir build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
