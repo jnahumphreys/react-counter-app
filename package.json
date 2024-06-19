@@ -3,7 +3,7 @@
   "version": "1.17.0",
   "description": "React counter app",
   "engines": {
-    "node": ">=18.15.0 <19.0.0"
+    "node": ">=20.14.0 <21.0.0"
   },
   "keywords": [],
   "homepage": ".",
