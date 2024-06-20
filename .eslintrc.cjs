@@ -19,4 +19,12 @@ module.exports = {
       version: "detect",
     },
   },
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      rules: {
+        "no-undef": "off",
+      },
+    },
+  ],
 };
