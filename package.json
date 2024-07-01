@@ -1,6 +1,6 @@
 {
   "name": "react-counter-app",
-  "version": "1.21.0",
+  "version": "1.22.0",
   "description": "React counter app",
   "engines": {
     "node": ">=20.14.0 <21.0.0"
@@ -46,6 +46,7 @@
     "parcel": "^2.12.0",
     "prettier": "^2.7.1",
     "process": "^0.11.10",
+    "serve": "^14.2.3",
     "typescript": "^4.9.3"
   },
   "scripts": {
