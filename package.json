@@ -1,6 +1,6 @@
 {
   "name": "react-counter-app",
-  "version": "1.22.0",
+  "version": "1.23.0",
   "description": "React counter app",
   "engines": {
     "node": ">=20.14.0 <21.0.0"
@@ -52,7 +52,6 @@
   "scripts": {
     "prepare": "husky install",
     "start": "parcel --dist-dir build --port 3000",
-    "start:ci": "BROWSER=none CI=true npm start",
     "build": "parcel build --dist-dir build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
