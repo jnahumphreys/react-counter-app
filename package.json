@@ -52,7 +52,6 @@
   "scripts": {
     "prepare": "husky install",
     "start": "parcel --dist-dir build --port 3000",
-    "start:ci": "BROWSER=none CI=true npm start",
     "build": "parcel build --dist-dir build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
