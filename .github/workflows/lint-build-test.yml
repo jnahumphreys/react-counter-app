@@ -29,6 +29,7 @@ jobs:
       - name: Build and E2E test App
         uses: cypress-io/github-action@v4
         with:
+          browser: chrome
           build: npm run build
           start: npx serve build/
           wait-on: "http://localhost:3000"
