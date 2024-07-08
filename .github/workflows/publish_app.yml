@@ -9,8 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone project, setup Node.js and install dependencies
-        uses: ./.github/workflows/clone-setup-node-install-deps
+      - name: Clone project
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js and install dependencies
+        uses: ./.github/actions/setup-action
 
       - name: Build and Publish App
         run: |
