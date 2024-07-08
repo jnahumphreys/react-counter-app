@@ -9,4 +9,5 @@ runs:
         node-version-file: ./package.json
 
     - name: Install dependencies
+      shell: bash
       run: npm ci --ignore-scripts
