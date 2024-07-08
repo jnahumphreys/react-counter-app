@@ -1,0 +1,13 @@
+name: "Clone project, setup Node.js and install dependencies"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: ./package.json
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci --ignore-scripts
