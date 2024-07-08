@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone project, setup Node.js and install dependencies
+      - name: Clone project
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js and install dependencies
         uses: ./.github/actions/setup-action
 
       - name: Lint JavaScript
