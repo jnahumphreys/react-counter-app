@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Clone project, setup Node.js and install dependencies
-        uses: ./.github/workflows/clone-setup-node-install-deps
+        uses: ./.github/actions/setup-action
 
       - name: Lint JavaScript
         run: npm run lint
