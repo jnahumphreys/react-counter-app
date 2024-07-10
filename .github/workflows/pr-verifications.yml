@@ -33,22 +33,22 @@ jobs:
       - name: Run formatting check with Prettier
         run: npm run check-formatting
 
-    build_app_and_test:
-      name: Build production app and end to end test
-      runs-on: ubuntu-latest
+  build_app_and_test:
+    name: Build production app and end to end test
+    runs-on: ubuntu-latest
 
-      stpes:
-        - name: Clone project
-          uses: actions/checkout@v4
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v4
 
-        - name: Setup Node.js and install dependencies
-          uses: ./.github/actions/setup-action
+      - name: Setup Node.js and install dependencies
+        uses: ./.github/actions/setup-action
 
-        - name: Build app, serve and test with Cypress
-          uses: cypress-io/github-action@v4
-          with:
-            browser: chrome
-            build: npm run build
-            start: npx serve build/
-            wait-on: "http://localhost:3000"
-            wait-on-timeout: 120
+      - name: Build app, serve and test with Cypress
+        uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+          build: npm run build
+          start: npx serve build/
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 120
