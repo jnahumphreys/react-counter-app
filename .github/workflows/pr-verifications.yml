@@ -5,7 +5,8 @@ on:
     branches: ["master"]
 
 jobs:
-  lint_build_test:
+  check_linting:
+    name: Check for linting errors
     runs-on: ubuntu-latest
 
     steps:
@@ -15,17 +16,39 @@ jobs:
       - name: Setup Node.js and install dependencies
         uses: ./.github/actions/setup-action
 
-      - name: Lint JavaScript
+      - name: Run linting check with ESLint
         run: npm run lint
 
-      - name: Check formatting with Prettier
+  check_formatting:
+    name: Check for formatting errors
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js and install dependencies
+        uses: ./.github/actions/setup-action
+
+      - name: Run formatting check with Prettier
         run: npm run check-formatting
 
-      - name: Build and E2E test App
-        uses: cypress-io/github-action@v4
-        with:
-          browser: chrome
-          build: npm run build
-          start: npx serve build/
-          wait-on: "http://localhost:3000"
-          wait-on-timeout: 120
+    build_app_and_test:
+      name: Build production app and end to end test
+      runs-on: ubuntu-latest
+
+      stpes:
+        - name: Clone project
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js and install dependencies
+          uses: ./.github/actions/setup-action
+
+        - name: Build app, serve and test with Cypress
+          uses: cypress-io/github-action@v4
+          with:
+            browser: chrome
+            build: npm run build
+            start: npx serve build/
+            wait-on: "http://localhost:3000"
+            wait-on-timeout: 120
