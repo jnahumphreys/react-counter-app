@@ -5,6 +5,17 @@ on:
     branches: ["master"]
 
 jobs:
+  check_version_bump:
+    name: Check for npm version bump
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v4
+
+      - name: Check for npm version version bump in package.json
+        uses: bachmacintosh/need-npm-package-version-bump@v1.0.25
+
   check_linting:
     name: Check for linting errors
     runs-on: ubuntu-latest
